@@ -1,0 +1,289 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		319779E91BB533D100ECCA50 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319779E81BB533D100ECCA50 /* AppDelegate.swift */; };
+		319779EB1BB533D100ECCA50 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 319779EA1BB533D100ECCA50 /* Assets.xcassets */; };
+		319779EE1BB533D100ECCA50 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 319779EC1BB533D100ECCA50 /* MainMenu.xib */; };
+		319779F61BB536F000ECCA50 /* StatusMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319779F51BB536F000ECCA50 /* StatusMenuController.swift */; settings = {ASSET_TAGS = (); }; };
+		319779F81BB5393F00ECCA50 /* PSIWeatherAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319779F71BB5393F00ECCA50 /* PSIWeatherAPI.swift */; settings = {ASSET_TAGS = (); }; };
+		319779FA1BB53A0000ECCA50 /* SWXMLHash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319779F91BB53A0000ECCA50 /* SWXMLHash.swift */; settings = {ASSET_TAGS = (); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		319779E51BB533D100ECCA50 /* PSIBar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PSIBar.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		319779E81BB533D100ECCA50 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		319779EA1BB533D100ECCA50 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		319779ED1BB533D100ECCA50 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		319779EF1BB533D100ECCA50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		319779F51BB536F000ECCA50 /* StatusMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusMenuController.swift; sourceTree = "<group>"; };
+		319779F71BB5393F00ECCA50 /* PSIWeatherAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PSIWeatherAPI.swift; sourceTree = "<group>"; };
+		319779F91BB53A0000ECCA50 /* SWXMLHash.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SWXMLHash.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		319779E21BB533D100ECCA50 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		319779DC1BB533D100ECCA50 = {
+			isa = PBXGroup;
+			children = (
+				319779E71BB533D100ECCA50 /* PSIBar */,
+				319779E61BB533D100ECCA50 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		319779E61BB533D100ECCA50 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				319779E51BB533D100ECCA50 /* PSIBar.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		319779E71BB533D100ECCA50 /* PSIBar */ = {
+			isa = PBXGroup;
+			children = (
+				319779E81BB533D100ECCA50 /* AppDelegate.swift */,
+				319779F51BB536F000ECCA50 /* StatusMenuController.swift */,
+				319779F71BB5393F00ECCA50 /* PSIWeatherAPI.swift */,
+				319779F91BB53A0000ECCA50 /* SWXMLHash.swift */,
+				319779EA1BB533D100ECCA50 /* Assets.xcassets */,
+				319779EC1BB533D100ECCA50 /* MainMenu.xib */,
+				319779EF1BB533D100ECCA50 /* Info.plist */,
+			);
+			path = PSIBar;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		319779E41BB533D100ECCA50 /* PSIBar */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 319779F21BB533D100ECCA50 /* Build configuration list for PBXNativeTarget "PSIBar" */;
+			buildPhases = (
+				319779E11BB533D100ECCA50 /* Sources */,
+				319779E21BB533D100ECCA50 /* Frameworks */,
+				319779E31BB533D100ECCA50 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PSIBar;
+			productName = PSIBar;
+			productReference = 319779E51BB533D100ECCA50 /* PSIBar.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		319779DD1BB533D100ECCA50 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = "The Cubiclerebels";
+				TargetAttributes = {
+					319779E41BB533D100ECCA50 = {
+						CreatedOnToolsVersion = 7.0;
+					};
+				};
+			};
+			buildConfigurationList = 319779E01BB533D100ECCA50 /* Build configuration list for PBXProject "PSIBar" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 319779DC1BB533D100ECCA50;
+			productRefGroup = 319779E61BB533D100ECCA50 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				319779E41BB533D100ECCA50 /* PSIBar */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		319779E31BB533D100ECCA50 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				319779EB1BB533D100ECCA50 /* Assets.xcassets in Resources */,
+				319779EE1BB533D100ECCA50 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		319779E11BB533D100ECCA50 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				319779F61BB536F000ECCA50 /* StatusMenuController.swift in Sources */,
+				319779FA1BB53A0000ECCA50 /* SWXMLHash.swift in Sources */,
+				319779E91BB533D100ECCA50 /* AppDelegate.swift in Sources */,
+				319779F81BB5393F00ECCA50 /* PSIWeatherAPI.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		319779EC1BB533D100ECCA50 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				319779ED1BB533D100ECCA50 /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		319779F01BB533D100ECCA50 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		319779F11BB533D100ECCA50 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		319779F31BB533D100ECCA50 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = PSIBar/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cubiclerebels.PSIBar;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		319779F41BB533D100ECCA50 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = PSIBar/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cubiclerebels.PSIBar;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		319779E01BB533D100ECCA50 /* Build configuration list for PBXProject "PSIBar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				319779F01BB533D100ECCA50 /* Debug */,
+				319779F11BB533D100ECCA50 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		319779F21BB533D100ECCA50 /* Build configuration list for PBXNativeTarget "PSIBar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				319779F31BB533D100ECCA50 /* Debug */,
+				319779F41BB533D100ECCA50 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 319779DD1BB533D100ECCA50 /* Project object */;
+}
