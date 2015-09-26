@@ -12,8 +12,8 @@ import Foundation
 class PSIWeatherAPI {
     //
     
-    let psiBaseURL = "http://www.nea.gov.sg/api/WebAPI?dataset=psi_update&keyref=addyourkeyhere"
-    let nowCaseURL = "http://www.nea.gov.sg/api/WebAPI?dataset=nowcast&keyref=addyourkeyhere"
+    let psiBaseURL = "http://www.nea.gov.sg/api/WebAPI?dataset=psi_update&keyref=" + kAPIKey
+    let nowCaseURL = "http://www.nea.gov.sg/api/WebAPI?dataset=nowcast&keyref=" +  kAPIKey
     
     func getPSIData(completionHandler: ((NSString) -> Void)?) {
         let session = NSURLSession.sharedSession()

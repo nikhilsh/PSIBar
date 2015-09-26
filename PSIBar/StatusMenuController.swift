@@ -19,9 +19,7 @@ class StatusMenuController: NSObject {
         timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, queue)
         dispatch_source_set_timer(timer, DISPATCH_TIME_NOW, 1200 * NSEC_PER_SEC, 1 * NSEC_PER_SEC) // every 60 seconds, with leeway of 1 second
         dispatch_source_set_event_handler(timer) {
-            let getPSIData = PSIWeatherAPI()
-            getPSIData.getPSIData(self.resultHandler)
-            NSLog("updating")
+            triggerUpdate()
         }
         dispatch_resume(timer)
     }
@@ -37,18 +35,23 @@ class StatusMenuController: NSObject {
         statusItem.image = icon
         statusItem.menu = statusMenu
         
-        let getPSIData = PSIWeatherAPI()
-        getPSIData.getPSIData(self.resultHandler)
-        
+        triggerUpdate()
         startTimer()
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "triggerUpdate", name: NSApplicationDidBecomeActiveNotification, object: nil)
     }
     
-    func resultHandler(psi:NSString!)
-    {
+    func triggerUpdate() {
+        let getPSIData = PSIWeatherAPI()
+        getPSIData.getPSIData(self.resultHandler)
+    }
+    
+    func resultHandler(psi:NSString!) {
         statusItem.title = psi as String
     }
     
     @IBAction func quitClicked(sender: NSMenuItem) {
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: NSApplicationDidBecomeActiveNotification, object: nil)
         NSApplication.sharedApplication().terminate(self)
     }
 }
