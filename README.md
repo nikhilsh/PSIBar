@@ -8,7 +8,7 @@ Thanks and don't go out much
 
 ## Acknowledgements
 
-The Haze logo was taken from (Bharathp)[http://bharathp666.deviantart.com] which is free for commercial use, and I hope that's fine. 
+The Haze logo was taken from [Bharathp](http://bharathp666.deviantart.com) which is free for commercial use, and I hope that's fine. 
 
 
 ## License
