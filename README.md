@@ -11,6 +11,13 @@ Thanks and don't go out much
 The Haze logo was taken from [Bharathp](http://bharathp666.deviantart.com) which is free for commercial use, and I hope that's fine. 
 
 
+## Feature Roadmap
+
+- Add full list of weather data available from NEA
+- Add notification when PSI crosses a threshold
+- Add Sparkle (or other auto update framework)
+
+
 ## License
 
 The MIT License (MIT)
