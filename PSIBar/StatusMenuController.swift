@@ -38,7 +38,10 @@ class StatusMenuController: NSObject {
         triggerUpdate()
         startTimer()
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "triggerUpdate", name: NSApplicationDidBecomeActiveNotification, object: nil)
+        dispatch_after(60,  dispatch_get_main_queue()) { () -> Void in
+            NSNotificationCenter.defaultCenter().addObserver(self, selector: "triggerUpdate", name: NSApplicationDidBecomeActiveNotification, object: nil)
+        }
+        
     }
     
     func triggerUpdate() {

@@ -14,7 +14,22 @@
 		319779F61BB536F000ECCA50 /* StatusMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319779F51BB536F000ECCA50 /* StatusMenuController.swift */; settings = {ASSET_TAGS = (); }; };
 		319779F81BB5393F00ECCA50 /* PSIWeatherAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319779F71BB5393F00ECCA50 /* PSIWeatherAPI.swift */; settings = {ASSET_TAGS = (); }; };
 		319779FA1BB53A0000ECCA50 /* SWXMLHash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319779F91BB53A0000ECCA50 /* SWXMLHash.swift */; settings = {ASSET_TAGS = (); }; };
+		31E7DDAE1BB903F3008001CA /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31E7DDAD1BB903F3008001CA /* Sparkle.framework */; settings = {ASSET_TAGS = (); }; };
+		31E7DDB01BB90427008001CA /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 31E7DDAD1BB903F3008001CA /* Sparkle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		31E7DDAF1BB90418008001CA /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				31E7DDB01BB90427008001CA /* Sparkle.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		3135E37A1BB6404F00DA6853 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -26,6 +41,7 @@
 		319779F51BB536F000ECCA50 /* StatusMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusMenuController.swift; sourceTree = "<group>"; };
 		319779F71BB5393F00ECCA50 /* PSIWeatherAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PSIWeatherAPI.swift; sourceTree = "<group>"; };
 		319779F91BB53A0000ECCA50 /* SWXMLHash.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SWXMLHash.swift; sourceTree = "<group>"; };
+		31E7DDAD1BB903F3008001CA /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				31E7DDAE1BB903F3008001CA /* Sparkle.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +80,7 @@
 				319779F71BB5393F00ECCA50 /* PSIWeatherAPI.swift */,
 				319779F91BB53A0000ECCA50 /* SWXMLHash.swift */,
 				3135E37A1BB6404F00DA6853 /* Constants.swift */,
+				31E7DDAD1BB903F3008001CA /* Sparkle.framework */,
 				319779EA1BB533D100ECCA50 /* Assets.xcassets */,
 				319779EC1BB533D100ECCA50 /* MainMenu.xib */,
 				319779EF1BB533D100ECCA50 /* Info.plist */,
@@ -80,6 +98,7 @@
 				319779E11BB533D100ECCA50 /* Sources */,
 				319779E21BB533D100ECCA50 /* Frameworks */,
 				319779E31BB533D100ECCA50 /* Resources */,
+				31E7DDAF1BB90418008001CA /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -248,9 +267,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Developer ID Application";
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/PSIBar",
+				);
 				INFOPLIST_FILE = PSIBar/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				OTHER_LDFLAGS = "-Wl,-rpath,@loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cubiclerebels.PSIBar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -262,9 +286,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Developer ID Application";
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/PSIBar",
+				);
 				INFOPLIST_FILE = PSIBar/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				OTHER_LDFLAGS = "-Wl,-rpath,@loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cubiclerebels.PSIBar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
