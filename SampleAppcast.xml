@@ -11,7 +11,10 @@
                 http://releases.io/nikhilsh/psibar
             </sparkle:releaseNotesLink>
             <pubDate>Mon, 28 Sep 2015 14:30:00 +0800</pubDate>
-            <enclosure url="https://github.com/nikhilsh/PSIBar/releases/download/0.1.0/PSIBar.app.zip"/>
+            <enclosure url="https://github.com/nikhilsh/PSIBar/releases/download/0.1.0/PSIBar.app.zip" sparkle:version="2.0"
+               sparkle:dsaSignature="MC0CFBfeCa1JyW30nbkBwainOzrN6EQuAh="
+               length="1623481"
+               type="application/octet-stream" />
             <sparkle:minimumSystemVersion>10.9</sparkle:minimumSystemVersion>
         </item>
     </channel>
