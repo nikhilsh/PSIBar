@@ -14,6 +14,7 @@ class StatusMenuController: NSObject {
     let statusItem = NSStatusBar.systemStatusBar().statusItemWithLength(-1)
     var timer: dispatch_source_t!
     var currentStatusLevel = ""
+    let getPSIData = PSIWeatherAPI()
     
     func startTimer() {
         let queue = dispatch_queue_create("com.domain.app.timer", nil)
@@ -45,15 +46,14 @@ class StatusMenuController: NSObject {
     }
     
     func triggerUpdate() {
-        let getPSIData = PSIWeatherAPI()
         getPSIData.getPSIData(self.resultHandler)
+        getDetailedPSIValues()
     }
     
     func resultHandler(psi:NSString!) {
         statusItem.title = psi as String
         let psiValue:Int? = Int(psi as String)
         createNotificationWithPSI(psiValue!)
-        
     }
     
     func createNotificationWithPSI(psi: Int) {
@@ -107,9 +107,34 @@ class StatusMenuController: NSObject {
         notification.soundName = NSUserNotificationDefaultSoundName
         NSUserNotificationCenter.defaultUserNotificationCenter().deliverNotification(notification)
     }
+    
+    @IBAction func didClickOnForecast(sender: NSMenuItem) {
+        getPSIData.getForecastData { (weather: [NSString]) -> Void in
+            self.dialogForecast(weather[0] as String, tempHigh: weather[1] as String, tempLow: weather[2] as String)
+        }
+    }
+    func getDetailedPSIValues() {
+        getPSIData.getDetailedPSIData { (psiData : [NSString], menuItemName : [NSString]) -> Void in
+            for var i = 0; i < psiData.count; i++ {
+                let item = self.statusMenu.itemAtIndex(i)
+                item?.title = (menuItemName[i] as String) + (psiData[i] as String)
+            }
+        }
+    }
+    
+    func dialogForecast(forecast: String, tempHigh: String, tempLow: String) -> Void {
+        let myPopup: NSAlert = NSAlert()
+        myPopup.messageText = "Twelve Hour Forecast by NEA"
+        myPopup.informativeText = "The weather is: " + forecast + " The temperature is between " + tempLow + "and" + tempHigh + " Degrees Celsius."
+        myPopup.alertStyle = NSAlertStyle.WarningAlertStyle
+        myPopup.addButtonWithTitle("Thanks")
+        myPopup.runModal()
+    }
+    
  
     @IBAction func quitClicked(sender: NSMenuItem) {
         NSNotificationCenter.defaultCenter().removeObserver(self, name: NSApplicationDidBecomeActiveNotification, object: nil)
+        stopTimer()
         NSApplication.sharedApplication().terminate(self)
     }
 }

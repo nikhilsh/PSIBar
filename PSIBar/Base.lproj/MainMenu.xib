@@ -21,16 +21,41 @@
         </customObject>
         <menu id="g1S-sw-dSu">
             <items>
-                <menuItem title="Quit" id="KMz-Ai-DMe">
+                <menuItem title="24 Hour PSI - " id="7Oe-zL-3Dr">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                </menuItem>
+                <menuItem title="North PSI - " id="Iaf-Dq-adk">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                </menuItem>
+                <menuItem title="Central PSI - " id="9F8-ZE-ePd">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                </menuItem>
+                <menuItem title="East PSI - " id="xNT-jJ-F2t">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                </menuItem>
+                <menuItem title="West PSI - " id="Bzz-uk-rjB">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                </menuItem>
+                <menuItem title="South PSI - " id="S9V-pL-CJX">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                </menuItem>
+                <menuItem isSeparatorItem="YES" id="agf-XL-vX1"/>
+                <menuItem title="12-Hour Forecast" id="izm-Rt-qAL">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
-                        <action selector="quitClicked:" target="dq7-9E-0cb" id="jUe-yY-3Vt"/>
+                        <action selector="didClickOnForecast:" target="dq7-9E-0cb" id="btx-bj-EfC"/>
                     </connections>
                 </menuItem>
                 <menuItem title="Check For Updates" id="h1u-hW-9QX">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
                         <action selector="checkForUpdates:" target="8gV-NQ-kIp" id="CQs-3x-cWa"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="Quit" id="KMz-Ai-DMe">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="quitClicked:" target="dq7-9E-0cb" id="jUe-yY-3Vt"/>
                     </connections>
                 </menuItem>
             </items>
