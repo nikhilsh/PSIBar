@@ -7,23 +7,24 @@
 //
 
 import Foundation
-
+import Alamofire
 
 class PSIWeatherAPI {
-    let psiBaseURL = "http://www.nea.gov.sg/api/WebAPI?dataset=psi_update&keyref=" + kAPIKey
-    let nowCaseURL = "http://www.nea.gov.sg/api/WebAPI?dataset=nowcast&keyref=" +  kAPIKey
+    let psiBaseURL = "http://www.nea.gov.sg/api/WebAPI?dataset=psi_update"
+    let nowCaseURL = "http://www.nea.gov.sg/api/WebAPI?dataset=nowcast"
     
     func getPSIData(completionHandler: ((NSString) -> Void)?) {
-        let session = NSURLSession.sharedSession()
-        let url = NSURL(string: psiBaseURL)
-        let task = session.dataTaskWithURL(url!) { data, response, error in
-            if (error == nil) {
-                let xml = SWXMLHash.parse(data!)
-                let psi = (xml["channel"]["item"]["region"][1]["record"][0]["reading"][1].element?.attributes["value"])!
-                NSLog(psi)
-                completionHandler?(psi)
+        Alamofire.request(.GET, psiBaseURL, parameters: ["keyref" : kAPIKey])
+            .response { request, response, data, error in
+                if let statusCode = response?.statusCode {
+                    if statusCode == 200 {
+                        let xml = SWXMLHash.parse(data!)
+                        let psi = (xml["channel"]["item"]["region"][1]["record"][0]["reading"][1].element?.attributes["value"])!
+                        completionHandler?(psi)
+                    }
+                }
             }
-        }
-        task.resume()
     }
+
 }
+
