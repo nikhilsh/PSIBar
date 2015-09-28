@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" xmlns:dc="http://purl.org/dc/elements/1.1/">
     <channel>
         <title>PSIBar's Changelog!</title>
-        <link>https://github.com/nikhilsh/PSIBar/blob/master/SampleAppcast.xml</link>
+        <link>github.com/nikhilsh/PSIBar/blob/master/SampleAppcast.xml</link>
         <description>Most recent changes with links to updates.</description>
         <language>en</language>
         <item>
@@ -16,6 +16,6 @@
                length="1623481"
                type="application/octet-stream" />
             <sparkle:minimumSystemVersion>10.9</sparkle:minimumSystemVersion>
-        </item>
+        </item>s
     </channel>
 </rss>
