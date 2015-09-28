@@ -7,12 +7,14 @@
 //
 
 import Cocoa
+import Fabric
+import Crashlytics
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationDidFinishLaunching(aNotification: NSNotification) {
-
+        Fabric.with([Crashlytics.self()])
     }
 
     func applicationWillTerminate(aNotification: NSNotification) {

@@ -16,6 +16,8 @@
 		319779FA1BB53A0000ECCA50 /* SWXMLHash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319779F91BB53A0000ECCA50 /* SWXMLHash.swift */; settings = {ASSET_TAGS = (); }; };
 		31E7DDAE1BB903F3008001CA /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31E7DDAD1BB903F3008001CA /* Sparkle.framework */; settings = {ASSET_TAGS = (); }; };
 		31E7DDB01BB90427008001CA /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 31E7DDAD1BB903F3008001CA /* Sparkle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		31E7DDB41BB92B09008001CA /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31E7DDB21BB92B09008001CA /* Fabric.framework */; settings = {ASSET_TAGS = (); }; };
+		31E7DDB51BB92B09008001CA /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31E7DDB31BB92B09008001CA /* Crashlytics.framework */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -42,6 +44,8 @@
 		319779F71BB5393F00ECCA50 /* PSIWeatherAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PSIWeatherAPI.swift; sourceTree = "<group>"; };
 		319779F91BB53A0000ECCA50 /* SWXMLHash.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SWXMLHash.swift; sourceTree = "<group>"; };
 		31E7DDAD1BB903F3008001CA /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
+		31E7DDB21BB92B09008001CA /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = SOURCE_ROOT; };
+		31E7DDB31BB92B09008001CA /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +54,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				31E7DDAE1BB903F3008001CA /* Sparkle.framework in Frameworks */,
+				31E7DDB51BB92B09008001CA /* Crashlytics.framework in Frameworks */,
+				31E7DDB41BB92B09008001CA /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,12 +86,22 @@
 				319779F71BB5393F00ECCA50 /* PSIWeatherAPI.swift */,
 				319779F91BB53A0000ECCA50 /* SWXMLHash.swift */,
 				3135E37A1BB6404F00DA6853 /* Constants.swift */,
-				31E7DDAD1BB903F3008001CA /* Sparkle.framework */,
 				319779EA1BB533D100ECCA50 /* Assets.xcassets */,
 				319779EC1BB533D100ECCA50 /* MainMenu.xib */,
 				319779EF1BB533D100ECCA50 /* Info.plist */,
+				31E7DDB61BB92B49008001CA /* Frameworks */,
 			);
 			path = PSIBar;
+			sourceTree = "<group>";
+		};
+		31E7DDB61BB92B49008001CA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				31E7DDAD1BB903F3008001CA /* Sparkle.framework */,
+				31E7DDB21BB92B09008001CA /* Fabric.framework */,
+				31E7DDB31BB92B09008001CA /* Crashlytics.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -99,6 +115,7 @@
 				319779E21BB533D100ECCA50 /* Frameworks */,
 				319779E31BB533D100ECCA50 /* Resources */,
 				31E7DDAF1BB90418008001CA /* CopyFiles */,
+				31E7DDB11BB92AEB008001CA /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -153,6 +170,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		31E7DDB11BB92AEB008001CA /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Fabric.framework/run 293cea63a6563fc503245378ace0292a918730e1 e27743e3891879b656422409233f0f6faa0d712a28948465a78d352e8e1b7c9a\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		319779E11BB533D100ECCA50 /* Sources */ = {
@@ -270,6 +303,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/PSIBar",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = PSIBar/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
@@ -289,6 +323,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/PSIBar",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = PSIBar/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
