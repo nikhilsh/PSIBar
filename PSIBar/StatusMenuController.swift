@@ -103,7 +103,8 @@ class StatusMenuController: NSObject {
             notification.informativeText = "Minimise outdoor activity"
             currentStatusLevel = "hazardous"
         }
-        
+        let item = self.statusMenu.itemAtIndex(0)
+        item?.title = currentStatusLevel.capitalizedString
         notification.soundName = NSUserNotificationDefaultSoundName
         NSUserNotificationCenter.defaultUserNotificationCenter().deliverNotification(notification)
     }
@@ -116,7 +117,7 @@ class StatusMenuController: NSObject {
     func getDetailedPSIValues() {
         getPSIData.getDetailedPSIData { (psiData : [NSString], menuItemName : [NSString]) -> Void in
             for var i = 0; i < psiData.count; i++ {
-                let item = self.statusMenu.itemAtIndex(i)
+                let item = self.statusMenu.itemAtIndex(i + 2)
                 item?.title = (menuItemName[i] as String) + (psiData[i] as String)
             }
         }

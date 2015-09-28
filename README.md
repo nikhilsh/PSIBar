@@ -13,10 +13,7 @@ The Haze logo was taken from [Bharathp](http://bharathp666.deviantart.com) which
 
 ## Feature Roadmap
 
-- Add full list of weather data available from NEA
-- Add notification when PSI crosses a threshold
-- Add Sparkle (or other auto update framework)
-
+- Do file issues for improvements!
 
 ## License
 
