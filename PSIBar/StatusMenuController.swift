@@ -125,7 +125,7 @@ class StatusMenuController: NSObject {
     func dialogForecast(forecast: String, tempHigh: String, tempLow: String) -> Void {
         let myPopup: NSAlert = NSAlert()
         myPopup.messageText = "Twelve Hour Forecast by NEA"
-        myPopup.informativeText = "The weather is: " + forecast + " The temperature is between " + tempLow + "and" + tempHigh + " Degrees Celsius."
+        myPopup.informativeText = "The weather is forecasted to be: " + forecast + "\r\n\n" + "The temperature will be between " + tempLow + "and" + tempHigh + " Degrees Celsius."
         myPopup.alertStyle = NSAlertStyle.WarningAlertStyle
         myPopup.addButtonWithTitle("Thanks")
         myPopup.runModal()
