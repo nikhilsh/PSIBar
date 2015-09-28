@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" xmlns:dc="http://purl.org/dc/elements/1.1/">
     <channel>
         <title>PSIBar's Changelog!</title>
-        <link>github.com/nikhilsh/PSIBar/blob/master/SampleAppcast.xml</link>
+        <link>https://raw.githubusercontent.com/nikhilsh/PSIBar/master/SampleAppcast.xml</link>
         <description>Most recent changes with links to updates.</description>
         <language>en</language>
         <item>
@@ -11,10 +11,7 @@
                 http://releases.io/nikhilsh/psibar
             </sparkle:releaseNotesLink>
             <pubDate>Mon, 28 Sep 2015 14:30:00 +0800</pubDate>
-            <enclosure url="https://github.com/nikhilsh/PSIBar/releases/download/0.1.0/PSIBar.app.zip" sparkle:version="1"
-               sparkle:dsaSignature="MC0CFBfeCa1JyW30nbkBwainOzrN6EQuAh="
-               length="1623481"
-               type="application/octet-stream" />
+            <enclosure url="https://github.com/nikhilsh/PSIBar/releases/download/0.1.0/PSIBar.app.zip"/>
             <sparkle:minimumSystemVersion>10.9</sparkle:minimumSystemVersion>
         </item>s
     </channel>
