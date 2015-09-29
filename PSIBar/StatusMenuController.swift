@@ -13,7 +13,8 @@ class StatusMenuController: NSObject {
     @IBOutlet weak var statusMenu: NSMenu!
     let statusItem = NSStatusBar.systemStatusBar().statusItemWithLength(-1)
     var timer: dispatch_source_t!
-    var currentStatusLevel = ""
+    var currentPSI = PSILevel(99)
+    var currentStatusLevel = PSILevel.Good
     let getPSIData = PSIWeatherAPI()
     
     func startTimer() {
@@ -52,59 +53,18 @@ class StatusMenuController: NSObject {
     
     func resultHandler(psi:NSString!) {
         statusItem.title = psi as String
-        let psiValue:Int? = Int(psi as String)
-        createNotificationWithPSI(psiValue!)
+        let psiValue:UInt? = UInt(psi as String)
+        currentPSI = PSILevel.init(psiValue!)
+        if (currentPSI.hashValue != currentStatusLevel.hashValue) {
+            createNotificationWithPSI()
+        }
     }
     
-    func createNotificationWithPSI(psi: Int) {
-        let notification:NSUserNotification = NSUserNotification()
-        if (psi<50) {
-            if (currentStatusLevel == "good") {
-                return
-            }
-            notification.title = "Good - " + String(psi)
-            notification.subtitle = "The PSI is within the good range"
-            notification.informativeText = "Normal activities! :)"
-            currentStatusLevel = "good"
-        }
-        else if (psi>50 && psi<100) {
-            if (currentStatusLevel == "moderate") {
-                return
-            }
-            notification.title = "Moderate - " + String(psi)
-            notification.subtitle = "The PSI is within the moderate range"
-            notification.informativeText = "Normal activities."
-            currentStatusLevel = "moderate"
-        }
-        else if (psi>100 && psi<200) {
-            if (currentStatusLevel == "unhealthy") {
-                return
-            }
-            notification.title = "Unhealthy - " + String(psi)
-            notification.subtitle = "The PSI is within the unhealthy range"
-            notification.informativeText = "Reduce prolonged or strenuous outdoor physical exertion"
-            currentStatusLevel = "unhealthy"
-        }
-        else if (psi>201 && psi<300) {
-            if (currentStatusLevel == "veryunhealthy") {
-                return
-            }
-            notification.title = "Very Unhealthy - " + String(psi)
-            notification.subtitle = "The PSI is within the very unhealthy range"
-            notification.informativeText = "Avoid prolonged or strenuous outdoor physical exertion"
-            currentStatusLevel = "veryunhealthy"
-        }
-        else {
-            if (currentStatusLevel == "hazardous") {
-                return
-            }
-            notification.title = "Hazardous - " + String(psi)
-            notification.subtitle = "The PSI is within the hazardous range"
-            notification.informativeText = "Minimise outdoor activity"
-            currentStatusLevel = "hazardous"
-        }
+    func createNotificationWithPSI() {
+        currentStatusLevel = currentPSI
+        let notification = currentPSI.getNotification()
         let item = self.statusMenu.itemAtIndex(0)
-        item?.title = currentStatusLevel.capitalizedString
+        item?.title = currentPSI.title.capitalizedString
         notification.soundName = NSUserNotificationDefaultSoundName
         NSUserNotificationCenter.defaultUserNotificationCenter().deliverNotification(notification)
     }

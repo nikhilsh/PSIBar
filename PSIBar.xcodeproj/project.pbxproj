@@ -14,6 +14,7 @@
 		319779F61BB536F000ECCA50 /* StatusMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319779F51BB536F000ECCA50 /* StatusMenuController.swift */; settings = {ASSET_TAGS = (); }; };
 		319779F81BB5393F00ECCA50 /* PSIWeatherAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319779F71BB5393F00ECCA50 /* PSIWeatherAPI.swift */; settings = {ASSET_TAGS = (); }; };
 		319779FA1BB53A0000ECCA50 /* SWXMLHash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319779F91BB53A0000ECCA50 /* SWXMLHash.swift */; settings = {ASSET_TAGS = (); }; };
+		31A5010C1BBA7A390062545E /* PSIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A5010B1BBA7A390062545E /* PSIModel.swift */; settings = {ASSET_TAGS = (); }; };
 		31E7DDAE1BB903F3008001CA /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31E7DDAD1BB903F3008001CA /* Sparkle.framework */; settings = {ASSET_TAGS = (); }; };
 		31E7DDB01BB90427008001CA /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 31E7DDAD1BB903F3008001CA /* Sparkle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		31E7DDB41BB92B09008001CA /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31E7DDB21BB92B09008001CA /* Fabric.framework */; settings = {ASSET_TAGS = (); }; };
@@ -44,6 +45,7 @@
 		319779F51BB536F000ECCA50 /* StatusMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusMenuController.swift; sourceTree = "<group>"; };
 		319779F71BB5393F00ECCA50 /* PSIWeatherAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PSIWeatherAPI.swift; sourceTree = "<group>"; };
 		319779F91BB53A0000ECCA50 /* SWXMLHash.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SWXMLHash.swift; sourceTree = "<group>"; };
+		31A5010B1BBA7A390062545E /* PSIModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PSIModel.swift; sourceTree = "<group>"; };
 		31E7DDAD1BB903F3008001CA /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
 		31E7DDB21BB92B09008001CA /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = SOURCE_ROOT; };
 		31E7DDB31BB92B09008001CA /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = SOURCE_ROOT; };
@@ -92,6 +94,7 @@
 				319779E81BB533D100ECCA50 /* AppDelegate.swift */,
 				319779F51BB536F000ECCA50 /* StatusMenuController.swift */,
 				319779F71BB5393F00ECCA50 /* PSIWeatherAPI.swift */,
+				31A5010B1BBA7A390062545E /* PSIModel.swift */,
 				319779F91BB53A0000ECCA50 /* SWXMLHash.swift */,
 				3135E37A1BB6404F00DA6853 /* Constants.swift */,
 				319779EA1BB533D100ECCA50 /* Assets.xcassets */,
@@ -270,6 +273,7 @@
 				319779F61BB536F000ECCA50 /* StatusMenuController.swift in Sources */,
 				319779FA1BB53A0000ECCA50 /* SWXMLHash.swift in Sources */,
 				319779E91BB533D100ECCA50 /* AppDelegate.swift in Sources */,
+				31A5010C1BBA7A390062545E /* PSIModel.swift in Sources */,
 				319779F81BB5393F00ECCA50 /* PSIWeatherAPI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

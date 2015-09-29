@@ -61,3 +61,82 @@ class PSIWeatherAPI {
 
 }
 
+enum PSILevel {
+    case Good
+    case Moderate
+    case Unhealthy
+    case VeryUnhealthy
+    case Hazardous
+    
+    init(_ psi: UInt) {
+        switch psi {
+        case 0..<50:
+            self = .Good
+        case 50..<100:
+            self = .Moderate
+        case 100..<200:
+            self = .Unhealthy
+        case 200..<300:
+            self = .VeryUnhealthy
+        default:
+            self = .Hazardous
+        }
+    }
+    
+    var title: String {
+        switch self {
+        case .Good:
+            return "Good"
+        case .Moderate:
+            return "Moderate"
+        case .Unhealthy:
+            return "Unhealthy"
+        case .VeryUnhealthy:
+            return "Very Unhealthy"
+        case .Hazardous:
+            return "Hazardous"
+        }
+    }
+    
+    var subtitle: String {
+        switch self {
+        case .Good:
+            return "The PSI is within the good range"
+        case .Moderate:
+            return "The PSI is within the moderate range"
+        case .Unhealthy:
+            return "The PSI is within the unhealthy range"
+        case .VeryUnhealthy:
+            return "The PSI is within the very unhealthy range"
+        case .Hazardous:
+            return "The PSI is within the hazardous range"
+        }
+    }
+    
+    var informativeText: String {
+        switch self {
+        case .Good:
+            return "You can resume normal activities! :)"
+        case .Moderate:
+            return "You can resume normal activities, according to NEA"
+        case .Unhealthy:
+            return "Reduce prolonged or strenuous outdoor physical exertion"
+        case .VeryUnhealthy:
+            return "Avoid prolonged or strenuous outdoor physical exertion"
+        case .Hazardous:
+            return "Minimise outdoor activity"
+        }
+    }
+}
+
+extension PSILevel {
+    func getNotification() -> NSUserNotification {
+        let notification = NSUserNotification()
+        notification.title = title
+        notification.subtitle = subtitle
+        notification.informativeText = informativeText
+        return notification
+    }
+}
+
+
