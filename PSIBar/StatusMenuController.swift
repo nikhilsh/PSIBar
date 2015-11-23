@@ -9,7 +9,8 @@
 import Cocoa
 
 class StatusMenuController: NSObject {
-    
+
+    @IBOutlet weak var loginButton: NSMenuItem!
     @IBOutlet weak var statusMenu: NSMenu!
     let statusItem = NSStatusBar.systemStatusBar().statusItemWithLength(-1)
     var timer: dispatch_source_t!
@@ -31,13 +32,14 @@ class StatusMenuController: NSObject {
         dispatch_source_cancel(timer)
         timer = nil
     }
-
+    
     override func awakeFromNib() {
         let icon = NSImage(named: "icon-haze")
         icon?.template = true
         statusItem.image = icon
         statusItem.menu = statusMenu
         
+        determineStateOfLoginButton()
         triggerUpdate()
         startTimer()
         
@@ -92,7 +94,28 @@ class StatusMenuController: NSObject {
         myPopup.runModal()
     }
     
- 
+    func determineStateOfLoginButton() {
+        let loginEnabled = NSUserDefaults.standardUserDefaults().boolForKey("LoginEnabled")
+        if (loginEnabled) {
+            loginButton.state = 1
+        }
+        else {
+            loginButton.state = 0
+        }
+    }
+    
+    @IBAction func handleLaunchAtLoginButton(sender: AnyObject) {
+        let loginEnabled = !NSUserDefaults.standardUserDefaults().boolForKey("LoginEnabled")
+        if (loginEnabled) {
+            loginButton.state = 1
+        }
+        else {
+            loginButton.state = 0
+        }
+//            SMLoginItemSetEnabled("sh.nikhil.PSIBar-Helper", loginButton.state == NSOnState)
+        NSUserDefaults.standardUserDefaults().setBool(loginEnabled, forKey: "LoginEnabled")
+    }
+    
     @IBAction func quitClicked(sender: NSMenuItem) {
         NSNotificationCenter.defaultCenter().removeObserver(self, name: NSApplicationDidBecomeActiveNotification, object: nil)
         stopTimer()
