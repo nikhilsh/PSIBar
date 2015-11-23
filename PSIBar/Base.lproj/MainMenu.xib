@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="8191" systemVersion="15B17c" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="8191" systemVersion="15B30a" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="8191"/>
@@ -50,12 +50,6 @@
                         <action selector="didClickOnForecast:" target="dq7-9E-0cb" id="btx-bj-EfC"/>
                     </connections>
                 </menuItem>
-                <menuItem title="Check For Updates" id="h1u-hW-9QX">
-                    <modifierMask key="keyEquivalentModifierMask"/>
-                    <connections>
-                        <action selector="checkForUpdates:" target="8gV-NQ-kIp" id="CQs-3x-cWa"/>
-                    </connections>
-                </menuItem>
                 <menuItem title="Quit" id="KMz-Ai-DMe">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
@@ -63,11 +57,7 @@
                     </connections>
                 </menuItem>
             </items>
+            <point key="canvasLocation" x="11.5" y="199.5"/>
         </menu>
-        <customObject id="8gV-NQ-kIp" customClass="SUUpdater">
-            <connections>
-                <outlet property="delegate" destination="h1u-hW-9QX" id="5cZ-N6-Vfo"/>
-            </connections>
-        </customObject>
     </objects>
 </document>
