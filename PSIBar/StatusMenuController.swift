@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+import ServiceManagement
 
 class StatusMenuController: NSObject {
 
@@ -46,6 +47,7 @@ class StatusMenuController: NSObject {
         dispatch_after(60,  dispatch_get_main_queue()) { () -> Void in
             NSNotificationCenter.defaultCenter().addObserver(self, selector: "triggerUpdate", name: NSApplicationDidBecomeActiveNotification, object: nil)
         }
+        closeHelperApp()
     }
     
     func triggerUpdate() {
@@ -82,6 +84,8 @@ class StatusMenuController: NSObject {
                 let item = self.statusMenu.itemAtIndex(i + 2)
                 item?.title = (menuItemName[i] as String) + (psiData[i] as String)
             }
+            let item = self.statusMenu.itemAtIndex(0)
+            item?.title = "PSI Rating - " + self.currentPSI.title.capitalizedString
         }
     }
     
@@ -90,7 +94,7 @@ class StatusMenuController: NSObject {
         myPopup.messageText = "Twelve Hour Forecast by NEA"
         myPopup.informativeText = "The weather is forecasted to be: " + forecast + "\r\n\n" + "The temperature will be between " + tempLow + "and" + tempHigh + " Degrees Celsius."
         myPopup.alertStyle = NSAlertStyle.WarningAlertStyle
-        myPopup.addButtonWithTitle("Thanks")
+        myPopup.addButtonWithTitle("Okay")
         myPopup.runModal()
     }
     
@@ -104,6 +108,18 @@ class StatusMenuController: NSObject {
         }
     }
     
+    func closeHelperApp () {
+        var startedAtLogin = false
+        for app in NSWorkspace.sharedWorkspace().runningApplications {
+            if app.bundleIdentifier == "sh.nikhil.PSIBar-helper" {
+                startedAtLogin = true
+            }
+        }
+        if startedAtLogin {
+            NSDistributedNotificationCenter.defaultCenter().postNotificationName("killHelperAppPSIBar", object: NSBundle.mainBundle().bundleIdentifier!)
+        }
+    }
+    
     @IBAction func handleLaunchAtLoginButton(sender: AnyObject) {
         let loginEnabled = !NSUserDefaults.standardUserDefaults().boolForKey("LoginEnabled")
         if (loginEnabled) {
@@ -112,7 +128,7 @@ class StatusMenuController: NSObject {
         else {
             loginButton.state = 0
         }
-//            SMLoginItemSetEnabled("sh.nikhil.PSIBar-Helper", loginButton.state == NSOnState)
+        SMLoginItemSetEnabled("sh.nikhil.PSIBar-helper" as CFString, loginEnabled)
         NSUserDefaults.standardUserDefaults().setBool(loginEnabled, forKey: "LoginEnabled")
     }
     

@@ -22,7 +22,7 @@
         </customObject>
         <menu id="g1S-sw-dSu">
             <items>
-                <menuItem title="Type - " id="Tba-QV-Vx8">
+                <menuItem title="Unable to connect" id="Tba-QV-Vx8">
                     <modifierMask key="keyEquivalentModifierMask"/>
                 </menuItem>
                 <menuItem isSeparatorItem="YES" id="c5U-uH-7RA"/>

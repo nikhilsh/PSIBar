@@ -7,26 +7,42 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3135E37B1BB6404F00DA6853 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3135E37A1BB6404F00DA6853 /* Constants.swift */; settings = {ASSET_TAGS = (); }; };
+		3135E37B1BB6404F00DA6853 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3135E37A1BB6404F00DA6853 /* Constants.swift */; };
 		319779E91BB533D100ECCA50 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319779E81BB533D100ECCA50 /* AppDelegate.swift */; };
 		319779EB1BB533D100ECCA50 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 319779EA1BB533D100ECCA50 /* Assets.xcassets */; };
 		319779EE1BB533D100ECCA50 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 319779EC1BB533D100ECCA50 /* MainMenu.xib */; };
-		319779F61BB536F000ECCA50 /* StatusMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319779F51BB536F000ECCA50 /* StatusMenuController.swift */; settings = {ASSET_TAGS = (); }; };
-		319779F81BB5393F00ECCA50 /* PSIWeatherAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319779F71BB5393F00ECCA50 /* PSIWeatherAPI.swift */; settings = {ASSET_TAGS = (); }; };
-		319779FA1BB53A0000ECCA50 /* SWXMLHash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319779F91BB53A0000ECCA50 /* SWXMLHash.swift */; settings = {ASSET_TAGS = (); }; };
-		31A5010C1BBA7A390062545E /* PSIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A5010B1BBA7A390062545E /* PSIModel.swift */; settings = {ASSET_TAGS = (); }; };
-		31E7DDB41BB92B09008001CA /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31E7DDB21BB92B09008001CA /* Fabric.framework */; settings = {ASSET_TAGS = (); }; };
-		31E7DDB51BB92B09008001CA /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31E7DDB31BB92B09008001CA /* Crashlytics.framework */; settings = {ASSET_TAGS = (); }; };
+		319779F61BB536F000ECCA50 /* StatusMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319779F51BB536F000ECCA50 /* StatusMenuController.swift */; };
+		319779F81BB5393F00ECCA50 /* PSIWeatherAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319779F71BB5393F00ECCA50 /* PSIWeatherAPI.swift */; };
+		319779FA1BB53A0000ECCA50 /* SWXMLHash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319779F91BB53A0000ECCA50 /* SWXMLHash.swift */; };
+		31D0BA541C0433C900224378 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D0BA531C0433C900224378 /* AppDelegate.swift */; };
+		31D0BA561C0433C900224378 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31D0BA551C0433C900224378 /* Assets.xcassets */; };
+		31D0BA591C0433C900224378 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31D0BA571C0433C900224378 /* MainMenu.xib */; };
+		31D0BA611C0434A000224378 /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31D0BA601C0434A000224378 /* ServiceManagement.framework */; };
+		31E7DDB41BB92B09008001CA /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31E7DDB21BB92B09008001CA /* Fabric.framework */; };
+		31E7DDB51BB92B09008001CA /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31E7DDB31BB92B09008001CA /* Crashlytics.framework */; };
+		31FB1C381C06C0F5006064C7 /* PSIBar-helper.app in Resources */ = {isa = PBXBuildFile; fileRef = 31D0BA511C0433C900224378 /* PSIBar-helper.app */; };
+		31FB1C3B1C06C13C006064C7 /* PSIBar-helper.app in CopyFiles */ = {isa = PBXBuildFile; fileRef = 31D0BA511C0433C900224378 /* PSIBar-helper.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		DCB048A9050F6B01388C5F64 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40AE2BE00324F8F8CC868B81 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		31FB1C391C06C0F5006064C7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 319779DD1BB533D100ECCA50 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 31D0BA501C0433C900224378;
+			remoteInfo = "PSIBar-helper";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		31E7DDAF1BB90418008001CA /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
+			buildActionMask = 12;
+			dstPath = Contents/Library/LoginItems;
+			dstSubfolderSpec = 1;
 			files = (
+				31FB1C3B1C06C13C006064C7 /* PSIBar-helper.app in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,8 +58,14 @@
 		319779F51BB536F000ECCA50 /* StatusMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusMenuController.swift; sourceTree = "<group>"; };
 		319779F71BB5393F00ECCA50 /* PSIWeatherAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PSIWeatherAPI.swift; sourceTree = "<group>"; };
 		319779F91BB53A0000ECCA50 /* SWXMLHash.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SWXMLHash.swift; sourceTree = "<group>"; };
-		31A5010B1BBA7A390062545E /* PSIModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PSIModel.swift; sourceTree = "<group>"; };
 		31C835B11BC3C1B500C3E525 /* PSIBar.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PSIBar.entitlements; sourceTree = "<group>"; };
+		31D0BA511C0433C900224378 /* PSIBar-helper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PSIBar-helper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		31D0BA531C0433C900224378 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		31D0BA551C0433C900224378 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		31D0BA581C0433C900224378 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		31D0BA5A1C0433C900224378 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		31D0BA5E1C04342000224378 /* PSIBar-helper.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "PSIBar-helper.entitlements"; sourceTree = "<group>"; };
+		31D0BA601C0434A000224378 /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
 		31E7DDB21BB92B09008001CA /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = SOURCE_ROOT; };
 		31E7DDB31BB92B09008001CA /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = SOURCE_ROOT; };
 		31F613F21BB9480C002B1735 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "Pods/../build/Debug-iphoneos/Alamofire.framework"; sourceTree = "<group>"; };
@@ -57,9 +79,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				31D0BA611C0434A000224378 /* ServiceManagement.framework in Frameworks */,
 				31E7DDB51BB92B09008001CA /* Crashlytics.framework in Frameworks */,
 				31E7DDB41BB92B09008001CA /* Fabric.framework in Frameworks */,
 				DCB048A9050F6B01388C5F64 /* Pods.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		31D0BA4E1C0433C900224378 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				319779E71BB533D100ECCA50 /* PSIBar */,
+				31D0BA521C0433C900224378 /* PSIBar-helper */,
 				319779E61BB533D100ECCA50 /* Products */,
 				EE2820EE3E24955C543FC758 /* Pods */,
 				9DC68BEC1ED961C0C70A9373 /* Frameworks */,
@@ -80,6 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				319779E51BB533D100ECCA50 /* PSIBar.app */,
+				31D0BA511C0433C900224378 /* PSIBar-helper.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -91,7 +123,6 @@
 				319779E81BB533D100ECCA50 /* AppDelegate.swift */,
 				319779F51BB536F000ECCA50 /* StatusMenuController.swift */,
 				319779F71BB5393F00ECCA50 /* PSIWeatherAPI.swift */,
-				31A5010B1BBA7A390062545E /* PSIModel.swift */,
 				319779F91BB53A0000ECCA50 /* SWXMLHash.swift */,
 				3135E37A1BB6404F00DA6853 /* Constants.swift */,
 				319779EA1BB533D100ECCA50 /* Assets.xcassets */,
@@ -102,9 +133,22 @@
 			path = PSIBar;
 			sourceTree = "<group>";
 		};
+		31D0BA521C0433C900224378 /* PSIBar-helper */ = {
+			isa = PBXGroup;
+			children = (
+				31D0BA5E1C04342000224378 /* PSIBar-helper.entitlements */,
+				31D0BA531C0433C900224378 /* AppDelegate.swift */,
+				31D0BA551C0433C900224378 /* Assets.xcassets */,
+				31D0BA571C0433C900224378 /* MainMenu.xib */,
+				31D0BA5A1C0433C900224378 /* Info.plist */,
+			);
+			path = "PSIBar-helper";
+			sourceTree = "<group>";
+		};
 		31E7DDB61BB92B49008001CA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				31D0BA601C0434A000224378 /* ServiceManagement.framework */,
 				31E7DDB21BB92B09008001CA /* Fabric.framework */,
 				31E7DDB31BB92B09008001CA /* Crashlytics.framework */,
 			);
@@ -148,10 +192,28 @@
 			buildRules = (
 			);
 			dependencies = (
+				31FB1C3A1C06C0F5006064C7 /* PBXTargetDependency */,
 			);
 			name = PSIBar;
 			productName = PSIBar;
 			productReference = 319779E51BB533D100ECCA50 /* PSIBar.app */;
+			productType = "com.apple.product-type.application";
+		};
+		31D0BA501C0433C900224378 /* PSIBar-helper */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 31D0BA5D1C0433C900224378 /* Build configuration list for PBXNativeTarget "PSIBar-helper" */;
+			buildPhases = (
+				31D0BA4D1C0433C900224378 /* Sources */,
+				31D0BA4E1C0433C900224378 /* Frameworks */,
+				31D0BA4F1C0433C900224378 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "PSIBar-helper";
+			productName = "PSIBar-helper";
+			productReference = 31D0BA511C0433C900224378 /* PSIBar-helper.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -160,11 +222,21 @@
 		319779DD1BB533D100ECCA50 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0710;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "The Cubiclerebels";
 				TargetAttributes = {
 					319779E41BB533D100ECCA50 = {
 						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = EHW7L3679R;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
+						};
+					};
+					31D0BA501C0433C900224378 = {
+						CreatedOnToolsVersion = 7.1.1;
 						DevelopmentTeam = EHW7L3679R;
 						SystemCapabilities = {
 							com.apple.Sandbox = {
@@ -188,6 +260,7 @@
 			projectRoot = "";
 			targets = (
 				319779E41BB533D100ECCA50 /* PSIBar */,
+				31D0BA501C0433C900224378 /* PSIBar-helper */,
 			);
 		};
 /* End PBXProject section */
@@ -198,7 +271,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				319779EB1BB533D100ECCA50 /* Assets.xcassets in Resources */,
+				31FB1C381C06C0F5006064C7 /* PSIBar-helper.app in Resources */,
 				319779EE1BB533D100ECCA50 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		31D0BA4F1C0433C900224378 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				31D0BA561C0433C900224378 /* Assets.xcassets in Resources */,
+				31D0BA591C0433C900224378 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,18 +357,41 @@
 				319779F61BB536F000ECCA50 /* StatusMenuController.swift in Sources */,
 				319779FA1BB53A0000ECCA50 /* SWXMLHash.swift in Sources */,
 				319779E91BB533D100ECCA50 /* AppDelegate.swift in Sources */,
-				31A5010C1BBA7A390062545E /* PSIModel.swift in Sources */,
 				319779F81BB5393F00ECCA50 /* PSIWeatherAPI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		31D0BA4D1C0433C900224378 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				31D0BA541C0433C900224378 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		31FB1C3A1C06C0F5006064C7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 31D0BA501C0433C900224378 /* PSIBar-helper */;
+			targetProxy = 31FB1C391C06C0F5006064C7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		319779EC1BB533D100ECCA50 /* MainMenu.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				319779ED1BB533D100ECCA50 /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		31D0BA571C0433C900224378 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				31D0BA581C0433C900224378 /* Base */,
 			);
 			name = MainMenu.xib;
 			sourceTree = "<group>";
@@ -378,10 +484,12 @@
 			baseConfigurationReference = 97F89001E16DC035B4A7BD9A /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = PSIBar/PSIBar.entitlements;
-				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/PSIBar",
@@ -394,6 +502,8 @@
 				OTHER_LDFLAGS = "-Wl,-rpath,@loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cubiclerebels.PSIBar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -402,9 +512,11 @@
 			baseConfigurationReference = 7B80B7FAF6CE5E32623FA4E6 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = PSIBar/PSIBar.entitlements;
-				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/PSIBar",
@@ -417,6 +529,39 @@
 				OTHER_LDFLAGS = "-Wl,-rpath,@loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cubiclerebels.PSIBar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+			};
+			name = Release;
+		};
+		31D0BA5B1C0433C900224378 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "PSIBar-helper/PSIBar-helper.entitlements";
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "PSIBar-helper/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_BUNDLE_IDENTIFIER = "sh.nikhil.PSIBar-helper";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		31D0BA5C1C0433C900224378 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "PSIBar-helper/PSIBar-helper.entitlements";
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "PSIBar-helper/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_BUNDLE_IDENTIFIER = "sh.nikhil.PSIBar-helper";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 			};
 			name = Release;
 		};
@@ -437,6 +582,15 @@
 			buildConfigurations = (
 				319779F31BB533D100ECCA50 /* Debug */,
 				319779F41BB533D100ECCA50 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		31D0BA5D1C0433C900224378 /* Build configuration list for PBXNativeTarget "PSIBar-helper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				31D0BA5B1C0433C900224378 /* Debug */,
+				31D0BA5C1C0433C900224378 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
