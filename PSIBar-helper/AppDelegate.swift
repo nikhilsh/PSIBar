@@ -31,11 +31,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             components.removeLast()
             components.removeLast()
             components.removeLast()
-            components.append("MacOS")
-            components.append("PSIBar")
+            components.append("Products")
+            components.append("Debug")
+            components.append("PSIBar.app")
             
             let newPath = NSString.pathWithComponents(components)
-            print (newPath)
+            NSLog("PSIBar hlper" + newPath)
             NSWorkspace.sharedWorkspace().launchApplication(newPath)
         }
         else {

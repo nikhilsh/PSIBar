@@ -20,7 +20,6 @@
 		31D0BA611C0434A000224378 /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31D0BA601C0434A000224378 /* ServiceManagement.framework */; };
 		31E7DDB41BB92B09008001CA /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31E7DDB21BB92B09008001CA /* Fabric.framework */; };
 		31E7DDB51BB92B09008001CA /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31E7DDB31BB92B09008001CA /* Crashlytics.framework */; };
-		31FB1C381C06C0F5006064C7 /* PSIBar-helper.app in Resources */ = {isa = PBXBuildFile; fileRef = 31D0BA511C0433C900224378 /* PSIBar-helper.app */; };
 		31FB1C3B1C06C13C006064C7 /* PSIBar-helper.app in CopyFiles */ = {isa = PBXBuildFile; fileRef = 31D0BA511C0433C900224378 /* PSIBar-helper.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		DCB048A9050F6B01388C5F64 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40AE2BE00324F8F8CC868B81 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
@@ -271,7 +270,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				319779EB1BB533D100ECCA50 /* Assets.xcassets in Resources */,
-				31FB1C381C06C0F5006064C7 /* PSIBar-helper.app in Resources */,
 				319779EE1BB533D100ECCA50 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -93,7 +93,7 @@ class StatusMenuController: NSObject {
         let myPopup: NSAlert = NSAlert()
         myPopup.messageText = "Twelve Hour Forecast by NEA"
         myPopup.informativeText = "The weather is forecasted to be: " + forecast + "\r\n\n" + "The temperature will be between " + tempLow + "and" + tempHigh + " Degrees Celsius."
-        myPopup.alertStyle = NSAlertStyle.WarningAlertStyle
+        myPopup.alertStyle = .InformationalAlertStyle
         myPopup.addButtonWithTitle("Okay")
         myPopup.runModal()
     }
@@ -129,7 +129,7 @@ class StatusMenuController: NSObject {
             loginButton.state = 0
         }
         SMLoginItemSetEnabled("sh.nikhil.PSIBar-helper" as CFString, loginEnabled)
-        NSUserDefaults.standardUserDefaults().setBool(loginEnabled, forKey: "LoginEnabled")
+        NSUserDefaults.standardUserDefaults().setBool(loginEnabled as Bool, forKey: "LoginEnabled")
     }
     
     @IBAction func quitClicked(sender: NSMenuItem) {
