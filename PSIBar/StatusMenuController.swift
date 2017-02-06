@@ -13,30 +13,27 @@ class StatusMenuController: NSObject {
 
     @IBOutlet weak var loginButton: NSMenuItem!
     @IBOutlet weak var statusMenu: NSMenu!
-    let statusItem = NSStatusBar.systemStatusBar().statusItemWithLength(-1)
-    var timer: dispatch_source_t!
+    let statusItem = NSStatusBar.system().statusItem(withLength: -1)
+    var timer: Timer = Timer()
     var currentPSI = PSILevel(99)
-    var currentStatusLevel = PSILevel.Good
+    var currentStatusLevel = PSILevel.normal
     let getPSIData = PSIWeatherAPI()
     
+    
     func startTimer() {
-        let queue = dispatch_queue_create("com.domain.app.timer", nil)
-        timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, queue)
-        dispatch_source_set_timer(timer, DISPATCH_TIME_NOW, 600 * NSEC_PER_SEC, 1 * NSEC_PER_SEC) // every 10 mins, with leeway of 1 second
-        dispatch_source_set_event_handler(timer) {
+        timer = Timer.scheduledTimer(withTimeInterval: 600, repeats: true, block: { (time) in
             self.triggerUpdate()
-        }
-        dispatch_resume(timer)
+        })
+        timer.fire()
     }
     
     func stopTimer() {
-        dispatch_source_cancel(timer)
-        timer = nil
+        timer.invalidate()
     }
     
     override func awakeFromNib() {
         let icon = NSImage(named: "icon-haze")
-        icon?.template = true
+        icon?.isTemplate = true
         statusItem.image = icon
         statusItem.menu = statusMenu
         
@@ -44,9 +41,10 @@ class StatusMenuController: NSObject {
         triggerUpdate()
         startTimer()
         
-        dispatch_after(60,  dispatch_get_main_queue()) { () -> Void in
-            NSNotificationCenter.defaultCenter().addObserver(self, selector: "triggerUpdate", name: NSApplicationDidBecomeActiveNotification, object: nil)
+        delayWithSeconds(60) { 
+            NotificationCenter.default.addObserver(self, selector: #selector(self.triggerUpdate), name: NSNotification.Name.NSApplicationDidBecomeActive, object: nil)
         }
+        
         closeHelperApp()
     }
     
@@ -55,7 +53,7 @@ class StatusMenuController: NSObject {
         getDetailedPSIValues()
     }
     
-    func resultHandler(psi:NSString!) {
+    func resultHandler(_ psi: String!) {
         statusItem.title = psi as String
         let psiValue:UInt? = UInt(psi as String)
         currentPSI = PSILevel.init(psiValue!)
@@ -67,74 +65,75 @@ class StatusMenuController: NSObject {
     func createNotificationWithPSI() {
         currentStatusLevel = currentPSI
         let notification = currentPSI.getNotification()
-        let item = self.statusMenu.itemAtIndex(0)
-        item?.title = currentPSI.title.capitalizedString
+        let item = self.statusMenu.item(at: 0)
+        item?.title = currentPSI.title.capitalized
         notification.soundName = NSUserNotificationDefaultSoundName
-        NSUserNotificationCenter.defaultUserNotificationCenter().deliverNotification(notification)
+        NSUserNotificationCenter.default.deliver(notification)
     }
     
-    @IBAction func didClickOnForecast(sender: NSMenuItem) {
-        getPSIData.getForecastData { (weather: [NSString]) -> Void in
+    @IBAction func didClickOnForecast(_ sender: NSMenuItem) {
+        getPSIData.getForecastData { (weather: [String]) -> Void in
             self.dialogForecast(weather[0] as String, tempHigh: weather[1] as String, tempLow: weather[2] as String)
         }
     }
+    
     func getDetailedPSIValues() {
-        getPSIData.getDetailedPSIData { (psiData : [NSString], menuItemName : [NSString]) -> Void in
-            for var i = 0; i < psiData.count; i++ {
-                let item = self.statusMenu.itemAtIndex(i + 2)
+        getPSIData.getDetailedPSIData { (psiData : [String], menuItemName : [String]) -> Void in
+            for i in 0 ..< psiData.count {
+                let item = self.statusMenu.item(at: i + 3)
                 item?.title = (menuItemName[i] as String) + (psiData[i] as String)
             }
-            let item = self.statusMenu.itemAtIndex(0)
-            item?.title = "PSI Rating - " + self.currentPSI.title.capitalizedString
+            let item = self.statusMenu.item(at: 0)
+            item?.title = "PM2.5 Rating - " + self.currentPSI.title.capitalized
+        }
+        get24hPSIValue()
+    }
+    
+    func get24hPSIValue() {
+        getPSIData.get24hPSIData { (psi) in
+            let item = self.statusMenu.item(at: 2)
+            item?.title = "24 Hour PSI - " + psi
         }
     }
     
-    func dialogForecast(forecast: String, tempHigh: String, tempLow: String) -> Void {
+    func dialogForecast(_ forecast: String, tempHigh: String, tempLow: String) -> Void {
         let myPopup: NSAlert = NSAlert()
         myPopup.messageText = "Twelve Hour Forecast by NEA"
         myPopup.informativeText = "The weather is forecasted to be: " + forecast + "\r\n\n" + "The temperature will be between " + tempLow + "and" + tempHigh + " Degrees Celsius."
-        myPopup.alertStyle = .InformationalAlertStyle
-        myPopup.addButtonWithTitle("Okay")
+        myPopup.alertStyle = .informational
+        myPopup.addButton(withTitle: "Okay")
         myPopup.runModal()
     }
     
     func determineStateOfLoginButton() {
-        let loginEnabled = NSUserDefaults.standardUserDefaults().boolForKey("LoginEnabled")
-        if (loginEnabled) {
-            loginButton.state = 1
-        }
-        else {
-            loginButton.state = 0
-        }
+        let loginEnabled = UserDefaults.standard.bool(forKey: "LoginEnabled")
+        loginButton.state = loginEnabled ? 1 : 0
     }
     
     func closeHelperApp () {
         var startedAtLogin = false
-        for app in NSWorkspace.sharedWorkspace().runningApplications {
+        for app in NSWorkspace.shared().runningApplications {
             if app.bundleIdentifier == "sh.nikhil.PSIBar-helper" {
                 startedAtLogin = true
             }
         }
         if startedAtLogin {
-            NSDistributedNotificationCenter.defaultCenter().postNotificationName("killHelperAppPSIBar", object: NSBundle.mainBundle().bundleIdentifier!)
+            let center = DistributedNotificationCenter.default()
+            let notificationName = NSNotification.Name(rawValue: "killHelperAppPSIBar")
+            center.post(name: notificationName, object: Bundle.main.bundleIdentifier)
         }
     }
     
-    @IBAction func handleLaunchAtLoginButton(sender: AnyObject) {
-        let loginEnabled = !NSUserDefaults.standardUserDefaults().boolForKey("LoginEnabled")
-        if (loginEnabled) {
-            loginButton.state = 1
-        }
-        else {
-            loginButton.state = 0
-        }
+    @IBAction func handleLaunchAtLoginButton(_ sender: AnyObject) {
+        let loginEnabled = !UserDefaults.standard.bool(forKey: "LoginEnabled")
+        loginButton.state = loginEnabled ? 1 : 0
         SMLoginItemSetEnabled("sh.nikhil.PSIBar-helper" as CFString, loginEnabled)
-        NSUserDefaults.standardUserDefaults().setBool(loginEnabled as Bool, forKey: "LoginEnabled")
+        UserDefaults.standard.set(loginEnabled as Bool, forKey: "LoginEnabled")
     }
     
-    @IBAction func quitClicked(sender: NSMenuItem) {
-        NSNotificationCenter.defaultCenter().removeObserver(self, name: NSApplicationDidBecomeActiveNotification, object: nil)
+    @IBAction func quitClicked(_ sender: NSMenuItem) {
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.NSApplicationDidBecomeActive, object: nil)
         stopTimer()
-        NSApplication.sharedApplication().terminate(self)
+        NSApplication.shared().terminate(self)
     }
 }

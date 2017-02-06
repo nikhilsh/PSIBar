@@ -1,0 +1,6 @@
+framework module Pods_PSIBar_helper {
+  umbrella header "Pods-PSIBar-helper-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -8,14 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		3135E37B1BB6404F00DA6853 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3135E37A1BB6404F00DA6853 /* Constants.swift */; };
-		315295481C14C28F0084C00B /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3152953F1C14C22C0084C00B /* Alamofire.framework */; };
-		315295491C14C28F0084C00B /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3152953F1C14C22C0084C00B /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		319779E91BB533D100ECCA50 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319779E81BB533D100ECCA50 /* AppDelegate.swift */; };
 		319779EB1BB533D100ECCA50 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 319779EA1BB533D100ECCA50 /* Assets.xcassets */; };
 		319779EE1BB533D100ECCA50 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 319779EC1BB533D100ECCA50 /* MainMenu.xib */; };
 		319779F61BB536F000ECCA50 /* StatusMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319779F51BB536F000ECCA50 /* StatusMenuController.swift */; };
 		319779F81BB5393F00ECCA50 /* PSIWeatherAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319779F71BB5393F00ECCA50 /* PSIWeatherAPI.swift */; };
-		319779FA1BB53A0000ECCA50 /* SWXMLHash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319779F91BB53A0000ECCA50 /* SWXMLHash.swift */; };
 		31D0BA541C0433C900224378 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D0BA531C0433C900224378 /* AppDelegate.swift */; };
 		31D0BA561C0433C900224378 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31D0BA551C0433C900224378 /* Assets.xcassets */; };
 		31D0BA591C0433C900224378 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31D0BA571C0433C900224378 /* MainMenu.xib */; };
@@ -23,65 +20,11 @@
 		31E7DDB41BB92B09008001CA /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31E7DDB21BB92B09008001CA /* Fabric.framework */; };
 		31E7DDB51BB92B09008001CA /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31E7DDB31BB92B09008001CA /* Crashlytics.framework */; };
 		31FB1C3B1C06C13C006064C7 /* PSIBar-helper.app in CopyFiles */ = {isa = PBXBuildFile; fileRef = 31D0BA511C0433C900224378 /* PSIBar-helper.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		BD73B575FDB677E3E5F92E64 /* Pods_PSIBar_helper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8B5A27FA6BFAD766759F4F9 /* Pods_PSIBar_helper.framework */; };
+		E7F323DB6E2B32FBD86A12EE /* Pods_PSIBar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 857AB505E0CE76BFDDA7911A /* Pods_PSIBar.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		3152953A1C14C22C0084C00B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 315295301C14C22C0084C00B /* Alamofire.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = F8111E3319A95C8B0040E7D1;
-			remoteInfo = "Alamofire iOS";
-		};
-		3152953C1C14C22C0084C00B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 315295301C14C22C0084C00B /* Alamofire.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = F8111E3E19A95C8B0040E7D1;
-			remoteInfo = "Alamofire iOS Tests";
-		};
-		3152953E1C14C22C0084C00B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 315295301C14C22C0084C00B /* Alamofire.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 4DD67C0B1A5C55C900ED2280;
-			remoteInfo = "Alamofire OSX";
-		};
-		315295401C14C22C0084C00B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 315295301C14C22C0084C00B /* Alamofire.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = F829C6B21A7A94F100A2CD59;
-			remoteInfo = "Alamofire OSX Tests";
-		};
-		315295421C14C22C0084C00B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 315295301C14C22C0084C00B /* Alamofire.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 4CF626EF1BA7CB3E0011A099;
-			remoteInfo = "Alamofire tvOS";
-		};
-		315295441C14C22C0084C00B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 315295301C14C22C0084C00B /* Alamofire.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 4CF626F81BA7CB3E0011A099;
-			remoteInfo = "Alamofire tvOS Tests";
-		};
-		315295461C14C22C0084C00B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 315295301C14C22C0084C00B /* Alamofire.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = E4202FE01B667AA100C997FB;
-			remoteInfo = "Alamofire watchOS";
-		};
-		3152954A1C14C28F0084C00B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 315295301C14C22C0084C00B /* Alamofire.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 4DD67C0A1A5C55C900ED2280;
-			remoteInfo = "Alamofire OSX";
-		};
 		31FB1C391C06C0F5006064C7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 319779DD1BB533D100ECCA50 /* Project object */;
@@ -98,7 +41,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				315295491C14C28F0084C00B /* Alamofire.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -116,8 +58,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		06A02E635BF4A1304D364FB7 /* Pods-PSIBar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PSIBar.release.xcconfig"; path = "Pods/Target Support Files/Pods-PSIBar/Pods-PSIBar.release.xcconfig"; sourceTree = "<group>"; };
+		26790D6BE99EE1984C372CB1 /* Pods-PSIBar-helper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PSIBar-helper.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PSIBar-helper/Pods-PSIBar-helper.debug.xcconfig"; sourceTree = "<group>"; };
 		3135E37A1BB6404F00DA6853 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		315295301C14C22C0084C00B /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = Alamofire/Alamofire.xcodeproj; sourceTree = "<group>"; };
 		319779E51BB533D100ECCA50 /* PSIBar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PSIBar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		319779E81BB533D100ECCA50 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		319779EA1BB533D100ECCA50 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -125,7 +68,6 @@
 		319779EF1BB533D100ECCA50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		319779F51BB536F000ECCA50 /* StatusMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusMenuController.swift; sourceTree = "<group>"; };
 		319779F71BB5393F00ECCA50 /* PSIWeatherAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PSIWeatherAPI.swift; sourceTree = "<group>"; };
-		319779F91BB53A0000ECCA50 /* SWXMLHash.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SWXMLHash.swift; sourceTree = "<group>"; };
 		31C835B11BC3C1B500C3E525 /* PSIBar.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PSIBar.entitlements; sourceTree = "<group>"; };
 		31D0BA511C0433C900224378 /* PSIBar-helper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PSIBar-helper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		31D0BA531C0433C900224378 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -138,6 +80,10 @@
 		31E7DDB31BB92B09008001CA /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = SOURCE_ROOT; };
 		31F613F21BB9480C002B1735 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "Pods/../build/Debug-iphoneos/Alamofire.framework"; sourceTree = "<group>"; };
 		40AE2BE00324F8F8CC868B81 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5C13933C33FABBFC355691DA /* Pods-PSIBar-helper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PSIBar-helper.release.xcconfig"; path = "Pods/Target Support Files/Pods-PSIBar-helper/Pods-PSIBar-helper.release.xcconfig"; sourceTree = "<group>"; };
+		857AB505E0CE76BFDDA7911A /* Pods_PSIBar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PSIBar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AFFD0F113B5184ECC38957ED /* Pods-PSIBar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PSIBar.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PSIBar/Pods-PSIBar.debug.xcconfig"; sourceTree = "<group>"; };
+		B8B5A27FA6BFAD766759F4F9 /* Pods_PSIBar_helper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PSIBar_helper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,7 +94,7 @@
 				31D0BA611C0434A000224378 /* ServiceManagement.framework in Frameworks */,
 				31E7DDB51BB92B09008001CA /* Crashlytics.framework in Frameworks */,
 				31E7DDB41BB92B09008001CA /* Fabric.framework in Frameworks */,
-				315295481C14C28F0084C00B /* Alamofire.framework in Frameworks */,
+				E7F323DB6E2B32FBD86A12EE /* Pods_PSIBar.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -156,34 +102,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD73B575FDB677E3E5F92E64 /* Pods_PSIBar_helper.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		315295311C14C22C0084C00B /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				3152953B1C14C22C0084C00B /* Alamofire.framework */,
-				3152953D1C14C22C0084C00B /* Alamofire iOS Tests.xctest */,
-				3152953F1C14C22C0084C00B /* Alamofire.framework */,
-				315295411C14C22C0084C00B /* Alamofire OSX Tests.xctest */,
-				315295431C14C22C0084C00B /* Alamofire.framework */,
-				315295451C14C22C0084C00B /* Alamofire tvOS Tests.xctest */,
-				315295471C14C22C0084C00B /* Alamofire.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		319779DC1BB533D100ECCA50 = {
 			isa = PBXGroup;
 			children = (
 				319779E71BB533D100ECCA50 /* PSIBar */,
-				315295301C14C22C0084C00B /* Alamofire.xcodeproj */,
 				31D0BA521C0433C900224378 /* PSIBar-helper */,
 				319779E61BB533D100ECCA50 /* Products */,
 				9DC68BEC1ED961C0C70A9373 /* Frameworks */,
+				E36C83327BE5215410CD98D7 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -203,7 +136,6 @@
 				319779E81BB533D100ECCA50 /* AppDelegate.swift */,
 				319779F51BB536F000ECCA50 /* StatusMenuController.swift */,
 				319779F71BB5393F00ECCA50 /* PSIWeatherAPI.swift */,
-				319779F91BB53A0000ECCA50 /* SWXMLHash.swift */,
 				3135E37A1BB6404F00DA6853 /* Constants.swift */,
 				319779EA1BB533D100ECCA50 /* Assets.xcassets */,
 				319779EC1BB533D100ECCA50 /* MainMenu.xib */,
@@ -240,8 +172,21 @@
 			children = (
 				31F613F21BB9480C002B1735 /* Alamofire.framework */,
 				40AE2BE00324F8F8CC868B81 /* Pods.framework */,
+				857AB505E0CE76BFDDA7911A /* Pods_PSIBar.framework */,
+				B8B5A27FA6BFAD766759F4F9 /* Pods_PSIBar_helper.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E36C83327BE5215410CD98D7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AFFD0F113B5184ECC38957ED /* Pods-PSIBar.debug.xcconfig */,
+				06A02E635BF4A1304D364FB7 /* Pods-PSIBar.release.xcconfig */,
+				26790D6BE99EE1984C372CB1 /* Pods-PSIBar-helper.debug.xcconfig */,
+				5C13933C33FABBFC355691DA /* Pods-PSIBar-helper.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -251,18 +196,20 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 319779F21BB533D100ECCA50 /* Build configuration list for PBXNativeTarget "PSIBar" */;
 			buildPhases = (
+				63AD289A0DEA84D8DC1FCE7F /* [CP] Check Pods Manifest.lock */,
 				319779E11BB533D100ECCA50 /* Sources */,
 				319779E21BB533D100ECCA50 /* Frameworks */,
 				319779E31BB533D100ECCA50 /* Resources */,
 				31E7DDAF1BB90418008001CA /* CopyFiles */,
 				31E7DDB11BB92AEB008001CA /* ShellScript */,
 				3152954C1C14C28F0084C00B /* Embed Frameworks */,
+				85A6BB24F34EBD05BED35F92 /* [CP] Embed Pods Frameworks */,
+				55F6396193D19D32B3BADFDA /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				31FB1C3A1C06C0F5006064C7 /* PBXTargetDependency */,
-				3152954B1C14C28F0084C00B /* PBXTargetDependency */,
 			);
 			name = PSIBar;
 			productName = PSIBar;
@@ -273,9 +220,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 31D0BA5D1C0433C900224378 /* Build configuration list for PBXNativeTarget "PSIBar-helper" */;
 			buildPhases = (
+				D306E840D136F9A30D974C42 /* [CP] Check Pods Manifest.lock */,
 				31D0BA4D1C0433C900224378 /* Sources */,
 				31D0BA4E1C0433C900224378 /* Frameworks */,
 				31D0BA4F1C0433C900224378 /* Resources */,
+				3C59E1AC8777F3893698845E /* [CP] Embed Pods Frameworks */,
+				C35F3859551660FA35BAA3BB /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -299,6 +249,8 @@
 					319779E41BB533D100ECCA50 = {
 						CreatedOnToolsVersion = 7.0;
 						DevelopmentTeam = EHW7L3679R;
+						LastSwiftMigration = 0820;
+						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Sandbox = {
 								enabled = 1;
@@ -308,6 +260,7 @@
 					31D0BA501C0433C900224378 = {
 						CreatedOnToolsVersion = 7.1.1;
 						DevelopmentTeam = EHW7L3679R;
+						LastSwiftMigration = 0820;
 						SystemCapabilities = {
 							com.apple.Sandbox = {
 								enabled = 1;
@@ -327,12 +280,6 @@
 			mainGroup = 319779DC1BB533D100ECCA50;
 			productRefGroup = 319779E61BB533D100ECCA50 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 315295311C14C22C0084C00B /* Products */;
-					ProjectRef = 315295301C14C22C0084C00B /* Alamofire.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				319779E41BB533D100ECCA50 /* PSIBar */,
@@ -340,58 +287,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		3152953B1C14C22C0084C00B /* Alamofire.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Alamofire.framework;
-			remoteRef = 3152953A1C14C22C0084C00B /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		3152953D1C14C22C0084C00B /* Alamofire iOS Tests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = "Alamofire iOS Tests.xctest";
-			remoteRef = 3152953C1C14C22C0084C00B /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		3152953F1C14C22C0084C00B /* Alamofire.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Alamofire.framework;
-			remoteRef = 3152953E1C14C22C0084C00B /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		315295411C14C22C0084C00B /* Alamofire OSX Tests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = "Alamofire OSX Tests.xctest";
-			remoteRef = 315295401C14C22C0084C00B /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		315295431C14C22C0084C00B /* Alamofire.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Alamofire.framework;
-			remoteRef = 315295421C14C22C0084C00B /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		315295451C14C22C0084C00B /* Alamofire tvOS Tests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = "Alamofire tvOS Tests.xctest";
-			remoteRef = 315295441C14C22C0084C00B /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		315295471C14C22C0084C00B /* Alamofire.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Alamofire.framework;
-			remoteRef = 315295461C14C22C0084C00B /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		319779E31BB533D100ECCA50 /* Resources */ = {
@@ -428,6 +323,96 @@
 			shellPath = /bin/sh;
 			shellScript = "./Fabric.framework/run 293cea63a6563fc503245378ace0292a918730e1 e27743e3891879b656422409233f0f6faa0d712a28948465a78d352e8e1b7c9a\n";
 		};
+		3C59E1AC8777F3893698845E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PSIBar-helper/Pods-PSIBar-helper-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		55F6396193D19D32B3BADFDA /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PSIBar/Pods-PSIBar-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		63AD289A0DEA84D8DC1FCE7F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		85A6BB24F34EBD05BED35F92 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PSIBar/Pods-PSIBar-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C35F3859551660FA35BAA3BB /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PSIBar-helper/Pods-PSIBar-helper-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D306E840D136F9A30D974C42 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -437,7 +422,6 @@
 			files = (
 				3135E37B1BB6404F00DA6853 /* Constants.swift in Sources */,
 				319779F61BB536F000ECCA50 /* StatusMenuController.swift in Sources */,
-				319779FA1BB53A0000ECCA50 /* SWXMLHash.swift in Sources */,
 				319779E91BB533D100ECCA50 /* AppDelegate.swift in Sources */,
 				319779F81BB5393F00ECCA50 /* PSIWeatherAPI.swift in Sources */,
 			);
@@ -454,11 +438,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		3152954B1C14C28F0084C00B /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "Alamofire OSX";
-			targetProxy = 3152954A1C14C28F0084C00B /* PBXContainerItemProxy */;
-		};
 		31FB1C3A1C06C0F5006064C7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 31D0BA501C0433C900224378 /* PSIBar-helper */;
@@ -568,6 +547,7 @@
 		};
 		319779F31BB533D100ECCA50 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AFFD0F113B5184ECC38957ED /* Pods-PSIBar.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -575,6 +555,7 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = EHW7L3679R;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -583,23 +564,26 @@
 				);
 				INFOPLIST_FILE = PSIBar/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				OTHER_LDFLAGS = "-Wl,-rpath,@loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cubiclerebels.PSIBar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		319779F41BB533D100ECCA50 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 06A02E635BF4A1304D364FB7 /* Pods-PSIBar.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = PSIBar/PSIBar.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = EHW7L3679R;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -608,16 +592,18 @@
 				);
 				INFOPLIST_FILE = PSIBar/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				OTHER_LDFLAGS = "-Wl,-rpath,@loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cubiclerebels.PSIBar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
 		31D0BA5B1C0433C900224378 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 26790D6BE99EE1984C372CB1 /* Pods-PSIBar-helper.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "PSIBar-helper/PSIBar-helper.entitlements";
@@ -629,11 +615,13 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "sh.nikhil.PSIBar-helper";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		31D0BA5C1C0433C900224378 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5C13933C33FABBFC355691DA /* Pods-PSIBar-helper.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "PSIBar-helper/PSIBar-helper.entitlements";
@@ -645,6 +633,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "sh.nikhil.PSIBar-helper";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

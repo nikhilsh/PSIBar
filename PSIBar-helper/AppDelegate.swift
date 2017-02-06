@@ -11,9 +11,9 @@ import Cocoa
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
-    func applicationDidFinishLaunching(aNotification: NSNotification) {
+    func applicationDidFinishLaunching(_ aNotification: Notification) {
         let mainAppIdentifier = "com.cubiclerebels.PSIBar"
-        let running = NSWorkspace.sharedWorkspace().runningApplications
+        let running = NSWorkspace.shared().runningApplications
         var alreadyRunning = false
         
         for app in running {
@@ -24,27 +24,26 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
         
         if !alreadyRunning {
-            NSDistributedNotificationCenter.defaultCenter().addObserver(self, selector: "terminate", name: "killHelperAppPSIBar", object: mainAppIdentifier)
+            let center = DistributedNotificationCenter.default()
+            center.addObserver(self, selector: #selector(terminate), name: NSNotification.Name(rawValue: "killHelperAppPSIBar"), object: mainAppIdentifier)
             
-            let path = NSBundle.mainBundle().bundlePath as NSString
-            var components = path.pathComponents
-            components.removeLast()
-            components.removeLast()
-            components.removeLast()
-            components.append("Products")
-            components.append("Debug")
-            components.append("PSIBar.app")
+            let path = Bundle.main.bundlePath as String
+            var pathURL = URL(string: path)
+            pathURL?.deleteLastPathComponent()
+            pathURL?.deleteLastPathComponent()
+            pathURL?.deleteLastPathComponent()
+            pathURL?.appendPathComponent("Products")
+            pathURL?.appendPathComponent("Debug")
+            pathURL?.appendPathComponent("PSIBar.app")
             
-            let newPath = NSString.pathWithComponents(components)
-            NSLog("PSIBar hlper" + newPath)
-            NSWorkspace.sharedWorkspace().launchApplication(newPath)
+            NSWorkspace.shared().launchApplication((pathURL?.absoluteString)!)
         }
         else {
             self.terminate()
         }
     }
 
-    func applicationWillTerminate(aNotification: NSNotification) {
+    func applicationWillTerminate(_ aNotification: Notification) {
         // Insert code here to tear down your application
     }
     

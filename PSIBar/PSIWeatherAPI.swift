@@ -8,123 +8,131 @@
 
 import Foundation
 import Alamofire
+import SWXMLHash
 
 class PSIWeatherAPI {
-    let psiBaseURL = "http://www.nea.gov.sg/api/WebAPI?dataset=psi_update"
-    let forecastURL = "http://www.nea.gov.sg/api/WebAPI?dataset=12hrs_forecast"
+    let pmBaseURL = "http://api.nea.gov.sg/api/WebAPI/?dataset=pm2.5_update&keyref=" + kAPIKey
+    let psiBaseURL = "http://api.nea.gov.sg/api/WebAPI/?dataset=psi_update&keyref=" + kAPIKey
+    let forecastURL = "http://api.nea.gov.sg/api/WebAPI?dataset=12hrs_forecast&keyref=" + kAPIKey
     
-    func getPSIData(completionHandler: ((NSString) -> Void)?) {
-        Alamofire.request(.GET, psiBaseURL, parameters: ["keyref" : kAPIKey])
-            .response { request, response, data, error in
-                if let statusCode = response?.statusCode {
-                    if statusCode == 200 {
-                        let xml = SWXMLHash.parse(data!)
-                        let psi = (xml["channel"]["item"]["region"][1]["record"][0]["reading"][1].element?.attributes["value"])!
-                        completionHandler?(psi)
-                    }
-                }
+    func getPSIData(_ completionHandler: ((String) -> Void)?) {
+        Alamofire.request(pmBaseURL).responseData { response in
+            debugPrint("All Response Info: \(response)")
+            switch response.result {
+            case .success:
+                let xml = SWXMLHash.parse(response.data!)
+                let psi = (xml["channel"]["item"]["region"][1]["record"][0]["reading"].element?.attribute(by: "value"))!
+                completionHandler?(psi.text)
+            case .failure(let error):
+                print(error)
             }
-    }
-    
-    func getForecastData(completionHandler: (([NSString]) -> Void)?) {
-        Alamofire.request(.GET, forecastURL, parameters: ["keyref" : kAPIKey])
-            .response { request, response, data, error in
-                if let statusCode = response?.statusCode {
-                    if statusCode == 200 {
-                        let xml = SWXMLHash.parse(data!)
-                        let forecast = (xml["channel"]["item"]["forecast"].element?.text)!
-                        let tempHigh = (xml["channel"]["item"]["temperature"].element?.attributes["high"])!
-                        let tempLow = (xml["channel"]["item"]["temperature"].element?.attributes["low"])!
-                        completionHandler?([forecast, tempHigh, tempLow])
-                    }
-                }
         }
     }
     
-    func getDetailedPSIData(completionHandler: (([NSString], [NSString]) -> Void)?) {
-        Alamofire.request(.GET, psiBaseURL, parameters: ["keyref" : kAPIKey])
-            .response { request, response, data, error in
-                if let statusCode = response?.statusCode {
-                    if statusCode == 200 {
-                        let xml = SWXMLHash.parse(data!)
-                        let longPSI = (xml["channel"]["item"]["region"][1]["record"][0]["reading"][0].element?.attributes["value"])!
-                        let northPSI = (xml["channel"]["item"]["region"][0]["record"][0]["reading"][1].element?.attributes["value"])!
-                        let centralPSI = (xml["channel"]["item"]["region"][2]["record"][0]["reading"][1].element?.attributes["value"])!
-                        let eastPSI = (xml["channel"]["item"]["region"][3]["record"][0]["reading"][1].element?.attributes["value"])!
-                        let westPSI = (xml["channel"]["item"]["region"][4]["record"][0]["reading"][1].element?.attributes["value"])!
-                        let southPSI = (xml["channel"]["item"]["region"][5]["record"][0]["reading"][1].element?.attributes["value"])!
-                        completionHandler?([longPSI, northPSI, centralPSI, eastPSI, westPSI, southPSI], ["24 Hour PSI - ", "North PSI - ", "Central PSI - ", "East PSI - ", "West PSI - ", "South PSI - "])
-                    }
-                }
+    func get24hPSIData(_ completionHandler: ((String) -> Void)?) {
+        Alamofire.request(psiBaseURL).responseData { response in
+            debugPrint("All Response Info: \(response)")
+            switch response.result {
+            case .success:
+                let xml = SWXMLHash.parse(response.data!)
+                let longPSI = (xml["channel"]["item"]["region"][1]["record"][0]["reading"][0].element?.attribute(by: "value"))!
+                completionHandler?(longPSI.text)
+            case .failure(let error):
+                print(error)
+            }
         }
     }
-
+    
+    func getForecastData(_ completionHandler: (([String]) -> Void)?) {
+        Alamofire.request(forecastURL).responseData { response in
+            debugPrint("All Response Info: \(response)")
+            switch response.result {
+            case .success:
+                let xml = SWXMLHash.parse(response.data!)
+                let forecast = (xml["channel"]["item"]["forecast"].element?.text)!
+                let temperatures = (xml["channel"]["item"]["temperature"].element?.allAttributes)!
+                completionHandler?([forecast, (temperatures["high"]?.text)!, (temperatures["low"]?.text)!])
+            case .failure(let error):
+                print(error)
+            }
+            
+        }
+    }
+    
+    func getDetailedPSIData(_ completionHandler: (([String], [String]) -> Void)?) {
+        Alamofire.request(pmBaseURL).responseData { response in
+            debugPrint("All Response Info: \(response)")
+            switch response.result {
+            case .success:
+                let xml = SWXMLHash.parse(response.data!)
+                let northPSI = (xml["channel"]["item"]["region"][0]["record"][0]["reading"].element?.attribute(by: "value"))!
+                let centralPSI = (xml["channel"]["item"]["region"][1]["record"][0]["reading"].element?.attribute(by: "value"))!
+                let eastPSI = (xml["channel"]["item"]["region"][2]["record"][0]["reading"].element?.attribute(by: "value"))!
+                let westPSI = (xml["channel"]["item"]["region"][3]["record"][0]["reading"].element?.attribute(by: "value"))!
+                let southPSI = (xml["channel"]["item"]["region"][4]["record"][0]["reading"].element?.attribute(by: "value"))!
+                completionHandler?([northPSI.text, centralPSI.text, eastPSI.text, westPSI.text, southPSI.text], ["North PM2.5 - ", "Central PM2.5 - ", "East PM2.5 - ", "West PM2.5 - ", "South PM2.5 - "])
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
 }
 
 enum PSILevel {
-    case Good
-    case Moderate
-    case Unhealthy
-    case VeryUnhealthy
-    case Hazardous
+    case normal
+    case elevated
+    case high
+    case veryHigh
     
     init(_ psi: UInt) {
         switch psi {
-        case 0..<50:
-            self = .Good
-        case 50..<100:
-            self = .Moderate
-        case 100..<200:
-            self = .Unhealthy
-        case 200..<300:
-            self = .VeryUnhealthy
+        case 0..<56:
+            self = .normal
+        case 56..<151:
+            self = .elevated
+        case 151..<251:
+            self = .high
         default:
-            self = .Hazardous
+            self = .veryHigh
         }
     }
     
     var title: String {
         switch self {
-        case .Good:
-            return "Good"
-        case .Moderate:
-            return "Moderate"
-        case .Unhealthy:
-            return "Unhealthy"
-        case .VeryUnhealthy:
-            return "Very Unhealthy"
-        case .Hazardous:
-            return "Hazardous"
+        case .normal:
+            return "Normal"
+        case .elevated:
+            return "Elevated"
+        case .high:
+            return "High"
+        case .veryHigh:
+            return "Very High"
         }
     }
     
     var subtitle: String {
         switch self {
-        case .Good:
-            return "The PSI is within the good range"
-        case .Moderate:
-            return "The PSI is within the moderate range"
-        case .Unhealthy:
-            return "The PSI is within the unhealthy range"
-        case .VeryUnhealthy:
-            return "The PSI is within the very unhealthy range"
-        case .Hazardous:
-            return "The PSI is within the hazardous range"
+        case .normal:
+            return "The PM2.5 is within the normal range"
+        case .elevated:
+            return "The PM2.5 is within the elevated range"
+        case .high:
+            return "The PM2.5 is within the high range"
+        case .veryHigh:
+            return "The PM2.5 is within the very high range"
         }
     }
     
     var informativeText: String {
         switch self {
-        case .Good:
+        case .normal:
             return "You can resume normal activities! :)"
-        case .Moderate:
-            return "You can resume normal activities, according to NEA"
-        case .Unhealthy:
+        case .elevated:
             return "Reduce prolonged or strenuous outdoor physical exertion"
-        case .VeryUnhealthy:
-            return "Avoid prolonged or strenuous outdoor physical exertion"
-        case .Hazardous:
+        case .high:
             return "Minimise outdoor activity"
+        case .veryHigh:
+            return "Avoid outdoor activity"
         }
     }
 }
