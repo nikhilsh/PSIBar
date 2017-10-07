@@ -7,7 +7,7 @@ target 'PSIBar' do
 
   # Pods for PSIBar
   pod 'Alamofire', '~> 4.3'
-  pod 'SWXMLHash', '~> 3.0.0'
+  pod 'SWXMLHash', '~> 4.0.0'
 end
 
 target 'PSIBar-helper' do
