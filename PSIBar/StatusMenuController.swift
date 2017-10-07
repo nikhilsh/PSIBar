@@ -21,9 +21,7 @@ class StatusMenuController: NSObject {
     
     
     func startTimer() {
-        timer = Timer.scheduledTimer(withTimeInterval: 600, repeats: true, block: { (time) in
-            self.triggerUpdate()
-        })
+        timer = Timer.scheduledTimer(timeInterval: 300, target: self, selector: #selector(self.triggerUpdate), userInfo: nil, repeats: true)
         timer.fire()
     }
     
@@ -41,7 +39,7 @@ class StatusMenuController: NSObject {
         triggerUpdate()
         startTimer()
         
-        delayWithSeconds(60) { 
+        delayWithSeconds(5) {
             NotificationCenter.default.addObserver(self, selector: #selector(self.triggerUpdate), name: NSNotification.Name.NSApplicationDidBecomeActive, object: nil)
         }
         
@@ -54,11 +52,13 @@ class StatusMenuController: NSObject {
     }
     
     func resultHandler(_ psi: String!) {
-        statusItem.title = psi as String
+        DispatchQueue.main.async {
+            self.statusItem.title = psi as String
+        }
         let psiValue:UInt? = UInt(psi as String)
-        currentPSI = PSILevel.init(psiValue!)
-        if (currentPSI.hashValue != currentStatusLevel.hashValue) {
-            createNotificationWithPSI()
+        self.currentPSI = PSILevel.init(psiValue!)
+        if (self.currentPSI.hashValue != self.currentStatusLevel.hashValue) {
+            self.createNotificationWithPSI()
         }
     }
     

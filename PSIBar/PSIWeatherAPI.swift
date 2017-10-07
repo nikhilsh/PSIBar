@@ -16,47 +16,40 @@ class PSIWeatherAPI {
     let forecastURL = "http://api.nea.gov.sg/api/WebAPI?dataset=12hrs_forecast&keyref=" + kAPIKey
     
     func getPSIData(_ completionHandler: ((String) -> Void)?) {
-        Alamofire.request(pmBaseURL).responseData { response in
-            debugPrint("All Response Info: \(response)")
-            switch response.result {
-            case .success:
-                let xml = SWXMLHash.parse(response.data!)
-                let psi = (xml["channel"]["item"]["region"][1]["record"][0]["reading"].element?.attribute(by: "value"))!
-                completionHandler?(psi.text)
-            case .failure(let error):
-                print(error)
-            }
+        let url = URL(string: pmBaseURL)
+        let urlrequest = URLRequest(url: url!)
+        let session = URLSession.shared
+        let task = session.dataTask(with: urlrequest) { (data, response, error) in
+            let xml = SWXMLHash.parse(data!)
+            let psi = (xml["channel"]["item"]["region"][1]["record"][0]["reading"].element?.attribute(by: "value"))!
+            completionHandler?(psi.text)
         }
+        task.resume()
     }
     
     func get24hPSIData(_ completionHandler: ((String) -> Void)?) {
-        Alamofire.request(psiBaseURL).responseData { response in
-            debugPrint("All Response Info: \(response)")
-            switch response.result {
-            case .success:
-                let xml = SWXMLHash.parse(response.data!)
-                let longPSI = (xml["channel"]["item"]["region"][1]["record"][0]["reading"][0].element?.attribute(by: "value"))!
-                completionHandler?(longPSI.text)
-            case .failure(let error):
-                print(error)
-            }
+        let url = URL(string: psiBaseURL)
+        let urlrequest = URLRequest(url: url!)
+        let session = URLSession.shared
+        let task = session.dataTask(with: urlrequest) { (data, response, error) in
+            let xml = SWXMLHash.parse(data!)
+            let longPSI = (xml["channel"]["item"]["region"][1]["record"][0]["reading"][0].element?.attribute(by: "value"))!
+            completionHandler?(longPSI.text)
         }
+        task.resume()
     }
     
     func getForecastData(_ completionHandler: (([String]) -> Void)?) {
-        Alamofire.request(forecastURL).responseData { response in
-            debugPrint("All Response Info: \(response)")
-            switch response.result {
-            case .success:
-                let xml = SWXMLHash.parse(response.data!)
-                let forecast = (xml["channel"]["item"]["forecast"].element?.text)!
-                let temperatures = (xml["channel"]["item"]["temperature"].element?.allAttributes)!
-                completionHandler?([forecast, (temperatures["high"]?.text)!, (temperatures["low"]?.text)!])
-            case .failure(let error):
-                print(error)
-            }
-            
+        let url = URL(string: psiBaseURL)
+        let urlrequest = URLRequest(url: url!)
+        let session = URLSession.shared
+        let task = session.dataTask(with: urlrequest) { (data, response, error) in
+            let xml = SWXMLHash.parse(data!)
+            let forecast = (xml["channel"]["item"]["forecast"].element?.text)!
+            let temperatures = (xml["channel"]["item"]["temperature"].element?.allAttributes)!
+            completionHandler?([forecast, (temperatures["high"]?.text)!, (temperatures["low"]?.text)!])
         }
+        task.resume()
     }
     
     func getDetailedPSIData(_ completionHandler: (([String], [String]) -> Void)?) {
